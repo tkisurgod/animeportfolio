@@ -6,14 +6,15 @@ type Project = {
   detail: string;
   file: string;
   image?: string;
+  link?: string;
   color: string;
 };
 
 const projects: Project[] = [
-  { name: "TK ENTERTAINMENT", kind: "Entertainment", detail: "Movie Store Development", file: "/images/project-01.png", image: "/images/project-01.png", color: "peach" },
-  { name: "Bruteforce", kind: "Web App", detail: "Mock windowsXP being bruteforced", file: "/images/project-02.png", image: "/images/project-02.png", color: "blue" },
-  { name: "Ecasl", kind: "Education", detail: "Responsive Website Design", file: "/images/project-03.png", image: "/images/project-03.png", color: "amber" },
-  { name: "Sneaker Store", kind: "Ecommerce", detail: "Modern UI Design", file: "/images/project-04.png", image: "/images/project-04.png", color: "sage" },
+  { name: "TK ENTERTAINMENT", kind: "Entertainment", detail: "Movie Store Development", file: "/images/project-01.png", image: "/images/project-01.png", link: "https://tkisurgod.github.io/Movies/", color: "peach" },
+  { name: "Bruteforce", kind: "Web App", detail: "Mock windowsXP being bruteforced", file: "/images/project-02.png", image: "/images/project-02.png", link: "https://tkisurgod.github.io/Gamified-Portfolio-Mk2/", color: "blue" },
+  { name: "Ecasl", kind: "Education", detail: "Responsive Website Design", file: "/images/project-03.png", image: "/images/project-03.png", link: "https://tkisurgod.github.io/eCASL/dashboard/", color: "amber" },
+  { name: "Sneaker Store", kind: "Ecommerce", detail: "Modern UI Design", file: "/images/project-04.png", image: "/images/project-04.png", link: "https://snika-plum.vercel.app/", color: "sage" },
 ];
 
 const skills = [
@@ -130,10 +131,23 @@ export default function Home() {
                 </div>
                 <div className="project-info">
                   <span className="project-tag">{project.kind}</span>
-                  <a href="#contact" className="project-open" aria-label={`Ask about ${project.name}`}><Arrow diagonal /></a>
+                  {project.link ? (
+                    <span className="project-open" aria-hidden="true"><Arrow diagonal /></span>
+                  ) : (
+                    <a href="#contact" className="project-open" aria-label={`Ask about ${project.name}`}><Arrow diagonal /></a>
+                  )}
                   <h3>{project.name}</h3>
                   <p>{project.detail}</p>
                 </div>
+                {project.link && (
+                  <a
+                    className="project-card-link"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${project.name} website (opens in a new tab)`}
+                  />
+                )}
               </article>
             ))}
           </div>

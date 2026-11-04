@@ -107,8 +107,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--lime); font-size: 12px; font-weight: 800; }
 .text-link:hover { color: #d1ff96; }
 .project-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.project-card { min-width: 0; overflow: hidden; border: 1px solid #29303b; border-radius: 11px; background: #111620; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.project-card { position: relative; min-width: 0; overflow: hidden; border: 1px solid #29303b; border-radius: 11px; background: #111620; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
 .project-card:hover { transform: translateY(-4px); border-color: #747f91; box-shadow: 0 12px 28px #0005; }
+.project-card-link::after { position: absolute; inset: 0; content: ""; }
+.project-card-link:focus-visible::after { outline: 2px solid var(--lime); outline-offset: 2px; border-radius: 11px; }
 .project-preview { padding: 7px 7px 0; }
 .project-preview .image-placeholder { height: clamp(108px, 12vw, 155px); border-radius: 7px; }
 .project-image-frame { position: relative; width: 100%; height: clamp(108px, 12vw, 155px); overflow: hidden; border-radius: 7px; background: #050609; }
@@ -123,7 +125,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .project-preview.sage .image-placeholder { background: linear-gradient(140deg, #344139, #1d2627 56%, #38352b); }
 .project-info { position: relative; min-height: 68px; padding: 8px 11px 10px; }
 .project-tag { display: inline-block; padding: 3px 7px; border: 1px solid #303748; border-radius: 99px; background: #19202c; color: #bbc9ff; font-size: 10px; }
-.project-open { position: absolute; top: 10px; right: 12px; color: #e4e5eb; font-size: 17px; }
+.project-open { position: absolute; z-index: 1; top: 10px; right: 12px; color: #e4e5eb; font-size: 17px; }
+.project-open[aria-hidden="true"] { pointer-events: none; }
 .project-info h3 { margin: 6px 0 3px; font-size: 13px; font-weight: 800; }
 .project-info p { margin: 0; color: #a2a8b4; font-size: 11px; }
 
