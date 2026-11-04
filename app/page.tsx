@@ -182,8 +182,8 @@ export default function Home() {
           <div className="contact-title"><h2>LET’S<br />WORK<br />TOGETHER!</h2><span className="contact-underline" /></div>
           <div className="contact-copy"><p>Have a project in mind or just want to say hi?<br />I’d love to hear from you.</p>
             <div className="contact-actions">
-              <a className="button button-lime" href="mailto:hello@KEITH.dev">✉ <span>Get In Touch</span> <Arrow /></a>
-              <a className="button button-outline email-button" href="mailto:hello@KEITH.dev">✉ <span>hello@KEITH.dev</span></a>
+              <a className="button button-lime" href="mailto:keithtom5154@gmail.com">✉ <span>Get In Touch</span> <Arrow /></a>
+              <a className="button button-outline email-button" href="mailto:keithtom5154@gmail.com">✉ <span>keithtom5154@gmail.com</span></a>
             </div>
           </div>
           <div className="contact-doodle" aria-hidden="true"><span>Good<br />ideas start<br />with a<br />conversation</span><b>✌</b><i>☺</i></div>
